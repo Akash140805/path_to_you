@@ -268,45 +268,27 @@ document.getElementById("backBtn").style.pointerEvents = "auto";
 const message = `
 <p>Dear Love,</p>
 
-<p>
-Out of billions of souls, through distance and time,
-we still found each other.
-</p>
+<p>Today, on the auspicious day of Holi, we complete six months of our relationship, half a year of love, growth, and togetherness, with forever ahead of us.</p>
 
-<p>
-There were so many paths and so many turns that
-could have led us somewhere else — and yet,
-somehow, destiny kept guiding me to you.
-</p>
+<p>Time has flown so fast. From being strangers to becoming each other’s home, we have grown together every single day with the belief that soon we will be living side by side. We were living our separate lives, and then God decided to bring us together, and since then, we have chosen each other every day despite our different struggles.</p>
 
-<p>
-There were so many paths and so many turns that
-could have led us somewhere else — and yet,
-somehow, destiny kept guiding me to you.
-</p>
+<p>With time, even our struggles have started to feel shared. Being with you makes me forget everything else — it’s just peace and happiness when you are in my life.</p>
 
-<p>
-There were so many paths and so many turns that
-could have led us somewhere else — and yet,
-somehow, destiny kept guiding me to you.
-</p>
+<p>I am truly grateful and blessed to be your man, a privilege I will cherish for all my life. I am longing for the moment when I finally get to see you and hold you in my arms.
 
-<p>
-There were so many paths and so many turns that
-could have led us somewhere else — and yet,
-somehow, destiny kept guiding me to you.
-</p>
+Every day I think about the days left until I meet you. And when I look back at how quickly these six months have passed, it makes me excited because each passing day means we are one day closer to living together. That thought comforts me whenever the distance feels heavy.</p>
 
-<p>
-Every maze. Every lifetime.
-I would still choose you.
-</p>
+<p>I see the effort you put in every single day. It makes me proud of you, and at the same time it makes me worry about you. I always pray that you stay in the best of health because that matters the most to me. I pray that everything you wish to achieve comes true, and I get to be part of your journey, being your peace, your strength, and your support.</p>
 
-<p>
-Happy Monthsary.
-</p>
+<p>Thank you so much, love, for always being there and for showing me what true love feels like. Keep chasing your dreams, but also take care of yourself and enjoy the journey.</p>
 
-<p>Forever yours,❤️</p>
+<p>I am always here with you. Soon, this distance will end, and we will build our dreams together, side by side.</p>
+
+<p>I love you ❤️</p>
+
+<p>Yours always,</p>
+
+<p>Akash</p>
 `;
 
 function startTyping() {
