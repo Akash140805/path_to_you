@@ -280,7 +280,7 @@ Every day I think about the days left until I meet you. And when I look back at 
 
 <p>I see the effort you put in every single day. It makes me proud of you, and at the same time it makes me worry about you. I always pray that you stay in the best of health because that matters the most to me. I pray that everything you wish to achieve comes true, and I get to be part of your journey, being your peace, your strength, and your support.</p>
 
-<p>Thank you so much, love, for always being there and for showing me what true love feels like. Keep chasing your dreams, but also take care of yourself and enjoy the journey.</p>
+<p>Thank you so much, love, for always being there and for showing me what true love feels like. Keep chasing your dreams, but also take care of yourself.</p>
 
 <p>I am always here with you. Soon, this distance will end, and we will build our dreams together, side by side.</p>
 
@@ -385,12 +385,15 @@ backBtn.addEventListener("click", function(){
   // Reset envelope
   envelope.classList.remove("open");
   envelope.classList.remove("fadeOut");
+  void envelope.offsetWidth; // 🔥 important reset
 
   document.getElementById("letterPage").classList.remove("show");
 
   // Hide button again
   backBtn.style.opacity = "0";
   backBtn.style.pointerEvents = "none";
+
+  letterText.innerHTML = ""; // 🔥 reset typing
 
   // Reset player positions
   player = {x:1,y:1};
