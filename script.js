@@ -7,6 +7,9 @@ const music = document.getElementById("bgMusic");
 
 let musicStarted = false;
 
+let typingTimeouts = [];
+let typingInProgress = false;
+
 const size = 15;
 const center = {x:7,y:7};
 
@@ -270,9 +273,9 @@ const message = `
 
 <p>Today, on the auspicious day of Holi, we complete six months of our relationship, half a year of love, growth, and togetherness, with forever ahead of us.</p>
 
-<p>Time has flown so fast. From being strangers to becoming each other’s home, we have grown together every single day with the belief that soon we will be living side by side. We were living our separate lives, and then God decided to bring us together, and since then, we have chosen each other every day despite our different struggles.</p>
+<p>Time has flown so fast. From being strangers to becoming each other’s home, we have grown together every single day with the belief that soon we will be living side by side. We were living our separate lives, and then God decided to bring us together, and since then, we have chosen each other every day despite our different struggles.
 
-<p>With time, even our struggles have started to feel shared. Being with you makes me forget everything else — it’s just peace and happiness when you are in my life.</p>
+With time, even our struggles have started to feel shared. Being with you makes me forget everything else — it’s just peace and happiness when you are in my life.</p>
 
 <p>I am truly grateful and blessed to be your man, a privilege I will cherish for all my life. I am longing for the moment when I finally get to see you and hold you in my arms.
 
@@ -293,22 +296,29 @@ Every day I think about the days left until I meet you. And when I look back at 
 
 function startTyping() {
 
-  letterText.innerHTML = ""; // clear first
+  if (typingInProgress) return; // prevent double start
+  typingInProgress = true;
+
+  letterText.innerHTML = "";
+  typingTimeouts.forEach(t => clearTimeout(t));
+  typingTimeouts = [];
 
   const tempDiv = document.createElement("div");
   tempDiv.innerHTML = message;
-
   const nodes = Array.from(tempDiv.childNodes);
 
   let paragraphIndex = 0;
 
   function typeParagraph() {
 
-    if (paragraphIndex >= nodes.length) return;
+    if (paragraphIndex >= nodes.length) {
+      typingInProgress = false;
+      return;
+    }
 
     const node = nodes[paragraphIndex];
 
-    if (node.nodeType === 1) { // element node (like <p>)
+    if (node.nodeType === 1) {
       const newElement = document.createElement(node.tagName);
       letterText.appendChild(newElement);
 
@@ -319,10 +329,12 @@ function startTyping() {
         if (i < text.length) {
           newElement.innerHTML += text.charAt(i);
           i++;
-          setTimeout(typeChar, 35);
+          let t = setTimeout(typeChar, 35);
+          typingTimeouts.push(t);
         } else {
           paragraphIndex++;
-          setTimeout(typeParagraph, 500); // delay between paragraphs
+          let t = setTimeout(typeParagraph, 500);
+          typingTimeouts.push(t);
         }
       }
 
@@ -377,6 +389,11 @@ window.addEventListener("DOMContentLoaded", function(){
 const backBtn = document.getElementById("backBtn");
 
 backBtn.addEventListener("click", function(){
+
+  typingTimeouts.forEach(t => clearTimeout(t));
+typingTimeouts = [];
+typingInProgress = false;
+letterText.innerHTML = "";
 
   // Hide final scene
   finalScene.style.opacity = 0;
