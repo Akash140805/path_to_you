@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our Destiny</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="preloader">
+  <div class="heartGlow"></div>
+  <div class="preloaderText">
+    Happy Monthsary, love ❤️
+  </div>
+</div>    
+
+<h1 class="title">Two Souls. One Destiny. ❤️</h1>
+
+<div class="mazeContainer">
+    <div id="maze" class="maze"></div>
+</div>
+
+<div class="controls">
+  <button onclick="move(0,-1)">⬆</button>
+  <div>
+    <button onclick="move(-1,0)">⬅</button>
+    <button onclick="move(1,0)">➡</button>
+  </div>
+  <button onclick="move(0,1)">⬇</button>
+</div>
+
+<div id="finalScene">
+
+  <div class="envelope" id="envelope">
+      <div class="flap"></div>
+      <div class="seal" id="seal">❤</div>
+  </div>
+
+  <div class="letterPage" id="letterPage">
+      <div class="letterInner">
+          <!-- <h1>We Found Each Other</h1> -->
+          <div id="letterText"></div>
+      </div>
+  </div>
+  <button id="backBtn" class="backBtn">← Back to Maze</button>
+
+</div>
+
+<audio id="bgMusic" preload="auto" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
+
+<button id="musicToggle">⏸</button>
+</body>
+</html>
